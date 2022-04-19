@@ -9,9 +9,6 @@ import org.springframework.stereotype.Repository;
 import redis.clients.jedis.Jedis;
 
 import javax.validation.Valid;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -75,11 +72,12 @@ public class OrderRedisRepositoryImpl implements OrderRedisRepository {
 
     //second from the midnight
     private double getPriority(Order order) {
-        ZonedDateTime nowZoned = ZonedDateTime.now();
-        Instant midnight = nowZoned.toLocalDate().atStartOfDay(nowZoned.getZone()).toInstant();
-        Duration duration = Duration.between(midnight, Instant.now());
-        long seconds = duration.getSeconds();
-        return seconds;
+        return System.currentTimeMillis()/1000;
+//        ZonedDateTime nowZoned = ZonedDateTime.now();
+//        Instant midnight = nowZoned.toLocalDate().atStartOfDay(nowZoned.getZone()).toInstant();
+//        Duration duration = Duration.between(midnight, Instant.now());
+//        long seconds = duration.getSeconds();
+//        return seconds;
     }
 
     @Override

@@ -3,7 +3,7 @@ package backend.shop.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import common.api.ResponseStatus;
 import io.swagger.annotations.ApiParam;
-import shop.OrderWaitingResponse;
+import shop.ListOrderResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -33,18 +33,18 @@ public class ShopApiController implements ShopApi {
         this.request = request;
     }
 
-    public ResponseEntity<OrderWaitingResponse> getListOrderInQueue(@ApiParam(value = "clientId" ) @RequestHeader(value="clientId", required=false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role" ) @RequestHeader(value="bearer", required=false) String bearer) {
+    public ResponseEntity<ListOrderResponse> getListOrderInQueue(@ApiParam(value = "clientId" ) @RequestHeader(value="clientId", required=false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role" ) @RequestHeader(value="bearer", required=false) String bearer) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<OrderWaitingResponse>(objectMapper.readValue("{\"empty\": false}", OrderWaitingResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<ListOrderResponse>(objectMapper.readValue("{\"empty\": false}", ListOrderResponse.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<OrderWaitingResponse>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<ListOrderResponse>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<OrderWaitingResponse>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<ListOrderResponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<ResponseStatus> processOrder(@ApiParam(value = "clientId" ) @RequestHeader(value="clientId", required=false) String clientId, @ApiParam(value = ""  )  @Valid @RequestBody Object body) {

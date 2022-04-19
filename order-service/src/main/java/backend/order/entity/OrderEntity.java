@@ -1,9 +1,6 @@
 package backend.order.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import order.Order;
 
 import javax.persistence.*;
@@ -21,6 +18,7 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name = "\"order\"")
 @Getter
+@Setter
 public class OrderEntity {
     @Id
     @Column(name = "ORDER_ID")

@@ -1,11 +1,11 @@
 package backend.order.utils;
 
 
-import backend.order.dto.OrderStatus;
 import backend.order.entity.OrderEntity;
 import backend.order.entity.OrderItemEntity;
 import order.Order;
 import order.OrderItem;
+import order.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

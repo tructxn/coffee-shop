@@ -17,7 +17,7 @@ import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2022-04-16T03:40:20.409Z")
 
 @Builder
-public class OrderWaitingResponse {
+public class ListOrderResponse {
   @JsonProperty("data")
   @Valid
   @NotNull

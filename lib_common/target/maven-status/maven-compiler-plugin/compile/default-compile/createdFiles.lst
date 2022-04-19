@@ -1,11 +1,9 @@
 order/OrderStatus.class
-shop/OrderWaitingResponse.class
 shop/ShopMenuResponse.class
 shop/ShopQueue$StatusEnum.class
 common/exeption/GlobalExceptionHandler.class
 user/LoginRequest.class
 common/api/ApiOriginFilter.class
-shop/OrderWaitingResponse$OrderWaitingResponseBuilder.class
 common/redis/RedisConfiguration.class
 order/OrderResponse$OrderResponseBuilder.class
 common/api/ResponseBuilder$ResultType.class
@@ -28,6 +26,9 @@ shop/CoffeeShop.class
 order/OrderItem$OrderItemBuilder.class
 order/Order$OrderBuilder.class
 shop/ShopResponse.class
+shop/ListOrderResponse$ListOrderResponseBuilder.class
 order/Order.class
+shop/ListOrderResponse.class
+common/exeption/NotFoundException.class
 shop/ShopQueueResponse.class
 common/api/ResponseStatus$ResponseStatusBuilder.class

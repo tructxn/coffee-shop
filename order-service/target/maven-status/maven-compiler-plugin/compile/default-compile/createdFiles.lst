@@ -1,8 +1,6 @@
-backend/order/dto/OrderStatus.class
 backend/order/entity/OrderEntity$OrderEntityBuilder.class
 backend/order/serivce/OrderService.class
 backend/order/api/OrderApi.class
-backend/order/dto/OrderResponse$OrderResponseBuilder.class
 backend/order/OrderLaucher.class
 backend/order/entity/OrderEntity.class
 backend/order/OrderLaucher$ExitException.class
@@ -13,7 +11,6 @@ backend/order/repository/OrderRedisRepository.class
 backend/order/configuration/HomeController.class
 backend/order/api/OrderApiController.class
 backend/order/repository/OrderRepository.class
-backend/order/dto/OrderResponse.class
 backend/order/repository/OrderRedisRepositoryImpl.class
 backend/order/utils/OrderMapperUtils.class
 backend/order/utils/OrderUtils.class

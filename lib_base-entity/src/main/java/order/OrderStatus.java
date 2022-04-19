@@ -1,4 +1,4 @@
-package dto.order;
+package order;
 
 public enum OrderStatus {
     SUCCESS(0, "SUCCESS"),

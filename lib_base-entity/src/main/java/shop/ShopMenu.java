@@ -1,4 +1,4 @@
-package dto.shop;
+package shop;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.validation.annotation.Validated;

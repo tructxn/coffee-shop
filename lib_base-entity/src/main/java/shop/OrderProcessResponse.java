@@ -1,29 +1,40 @@
-package dto.shop;
+package shop;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import dto.response.ResponseStatus;
+import common.api.ResponseStatus;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
- * ShopResponse
+ * OrderProcessResponse
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2022-04-16T03:40:20.409Z")
 
 
-public class ShopResponse   {
+public class OrderProcessResponse   {
   @JsonProperty("data")
-  private CoffeeShop data = null;
+  @Valid
+  private List<Object> data = null;
 
-  @JsonProperty("responseStatus")
+  @JsonProperty("ResponseStatus")
   private ResponseStatus responseStatus = null;
 
-  public ShopResponse data(CoffeeShop data) {
+  public OrderProcessResponse data(List<Object> data) {
     this.data = data;
+    return this;
+  }
+
+  public OrderProcessResponse addDataItem(Object dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<Object>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -33,17 +44,16 @@ public class ShopResponse   {
   **/
   @ApiModelProperty(value = "")
 
-  @Valid
 
-  public CoffeeShop getData() {
+  public List<Object> getData() {
     return data;
   }
 
-  public void setData(CoffeeShop data) {
+  public void setData(List<Object> data) {
     this.data = data;
   }
 
-  public ShopResponse responseStatus(ResponseStatus responseStatus) {
+  public OrderProcessResponse responseStatus(ResponseStatus responseStatus) {
     this.responseStatus = responseStatus;
     return this;
   }
@@ -73,9 +83,9 @@ public class ShopResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ShopResponse shopResponse = (ShopResponse) o;
-    return Objects.equals(this.data, shopResponse.data) &&
-        Objects.equals(this.responseStatus, shopResponse.responseStatus);
+    OrderProcessResponse orderProcessResponse = (OrderProcessResponse) o;
+    return Objects.equals(this.data, orderProcessResponse.data) &&
+        Objects.equals(this.responseStatus, orderProcessResponse.responseStatus);
   }
 
   @Override
@@ -86,7 +96,7 @@ public class ShopResponse   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ShopResponse {\n");
+    sb.append("class OrderProcessResponse {\n");
 
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");

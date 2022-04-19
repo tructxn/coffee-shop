@@ -9,7 +9,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "backend.order", "backend.order.api" , "backend.order.configuration", "api", "exception", "configuration", "dto.*"})
+@ComponentScan(basePackages = { "backend.order", "backend.order.api" , "backend.order.configuration", "common", "order"})
 public class OrderLaucher implements CommandLineRunner {
 
 

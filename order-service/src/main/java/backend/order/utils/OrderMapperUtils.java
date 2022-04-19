@@ -4,7 +4,7 @@ package backend.order.utils;
 import backend.order.dto.Order;
 import backend.order.entity.OrderEntity;
 import backend.order.entity.OrderItemEntity;
-import dto.order.OrderStatus;
+import order.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

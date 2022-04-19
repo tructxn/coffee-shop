@@ -2,7 +2,7 @@ package backend.order.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
-import dto.response.ResponseStatus;
+import common.api.ResponseStatus;
 import org.springframework.validation.annotation.Validated;
 
 /**

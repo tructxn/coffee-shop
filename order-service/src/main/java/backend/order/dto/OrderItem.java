@@ -21,8 +21,6 @@ import java.math.BigDecimal;
 @Getter
 public class OrderItem {
   @JsonProperty("orderItemId")
-  @NotNull
-  @Size(max = 50, message = "max size 50")
   private String orderItemId;
 
   @JsonProperty("orderId")

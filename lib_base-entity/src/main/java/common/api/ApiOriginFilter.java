@@ -1,4 +1,4 @@
-package api;
+package common.api;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;

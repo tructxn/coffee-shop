@@ -1,9 +1,9 @@
 package backend.shop.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dto.response.ResponseStatus;
+import common.api.ResponseStatus;
 import io.swagger.annotations.ApiParam;
-import dto.shop.OrderProcessResponse;
+import shop.OrderProcessResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

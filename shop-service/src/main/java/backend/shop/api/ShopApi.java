@@ -6,8 +6,8 @@
 package backend.shop.api;
 
 import io.swagger.annotations.*;
-import dto.response.ResponseStatus;
-import dto.shop.OrderProcessResponse;
+import common.api.ResponseStatus;
+import shop.OrderProcessResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;

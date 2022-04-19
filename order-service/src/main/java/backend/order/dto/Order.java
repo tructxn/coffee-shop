@@ -21,7 +21,6 @@ import java.util.List;
 @Getter
 public class Order {
     @JsonProperty("orderId")
-    @NotNull @Size(max = 50, message = "max size 50")
     private String orderId;
 
     @JsonProperty("userId")

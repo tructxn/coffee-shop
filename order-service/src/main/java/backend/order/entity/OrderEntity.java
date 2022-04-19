@@ -27,7 +27,7 @@ public class OrderEntity {
     private String orderId;
     @Column(name = "USER_ID")
     private String userId;
-    @OneToMany(mappedBy = "orderId", cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "orderId", cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST, CascadeType.REMOVE})
     private List<OrderItemEntity> orders;
     @Column(name = "SHOP_ID")
     private String shopId;
@@ -66,7 +66,7 @@ public class OrderEntity {
         builder.totalPrice(totalPrice);
         builder.queueId(queueId);
         builder.estimateFinishTime(estimateFinishTime);
-        if (orders == null) {
+        if (orders == null || orders.isEmpty()) {
             builder.orders(Collections.emptyList());
         } else {
             builder.orders(orders.stream().map(v -> v.toDto()).collect(Collectors.toList()));

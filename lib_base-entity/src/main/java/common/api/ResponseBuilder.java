@@ -1,6 +1,6 @@
-package dto.response;
+package common.api;
 
-import exeption.ApiException;
+import common.exeption.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

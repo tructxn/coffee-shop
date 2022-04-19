@@ -5,13 +5,15 @@
  */
 package backend.order.api;
 
-import backend.order.dto.Order;
 import backend.order.dto.OrderResponse;
+import common.api.ResponseStatus;
 import io.swagger.annotations.*;
+import order.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import shop.OrderWaitingResponse;
 
 import javax.validation.Valid;
 
@@ -63,4 +65,29 @@ public interface OrderApi {
         method = RequestMethod.POST)
     ResponseEntity<OrderResponse> orderCoffee(@ApiParam(value = "create order", required = true) @Valid @RequestBody Order body, @ApiParam(value = "clientId") @RequestHeader(value = "clientId", required = false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role") @RequestHeader(value = "bearer", required = false) String bearer, BindingResult bindingResult);
 
+
+    @ApiOperation(value = "Get list order in queue", nickname = "getListOrderInQueue", notes = "", response = OrderWaitingResponse.class, authorizations = {
+            @Authorization(value = "shop_auth", scopes = {
+                    @AuthorizationScope(scope = "read", description = "read shop entity")
+            })
+    }, tags={"backend/shop", })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "successful operation", response = OrderWaitingResponse.class) })
+    @RequestMapping(value = "/shop/order",
+            produces = { "application/json" },
+            method = RequestMethod.GET)
+    ResponseEntity<OrderWaitingResponse> getListOrderInQueue(@ApiParam(value = "clientId") @RequestParam ("queueId") Integer queueId, @RequestParam("shopId") String shopId, @RequestHeader(value = "clientId", required = false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role") @RequestHeader(value = "bearer", required = false) String bearer);
+
+
+    @ApiOperation(value = "Process Order ", nickname = "processOrder", notes = "", response = common.api.ResponseStatus.class, authorizations = {
+            @Authorization(value = "shop_auth", scopes = {
+                    @AuthorizationScope(scope = "write", description = "Grants read access modify shop entity in your account")
+            })
+    }, tags={"backend/shop", })
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "successful operation", response = common.api.ResponseStatus.class) })
+    @RequestMapping(value = "/shop/order/",
+            produces = { "application/json" },
+            method = RequestMethod.PATCH)
+    ResponseEntity<ResponseStatus> processOrder(@ApiParam(value = "clientId") @RequestHeader(value = "clientId", required = false) String clientId, @ApiParam(value = "") @Valid @RequestBody Object body);
 }

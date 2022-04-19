@@ -7,7 +7,7 @@ package backend.shop.api;
 
 import io.swagger.annotations.*;
 import common.api.ResponseStatus;
-import shop.OrderProcessResponse;
+import shop.OrderWaitingResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,17 +24,17 @@ import javax.validation.Valid;
 @RequestMapping(value = "/v1")
 public interface ShopApi {
 
-    @ApiOperation(value = "Get list order in queue", nickname = "getListOrderInQueue", notes = "", response = OrderProcessResponse.class, authorizations = {
+    @ApiOperation(value = "Get list order in queue", nickname = "getListOrderInQueue", notes = "", response = OrderWaitingResponse.class, authorizations = {
         @Authorization(value = "shop_auth", scopes = {
             @AuthorizationScope(scope = "read", description = "read shop entity")
             })
     }, tags={"backend/shop", })
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "successful operation", response = OrderProcessResponse.class) })
+        @ApiResponse(code = 200, message = "successful operation", response = OrderWaitingResponse.class) })
     @RequestMapping(value = "/shop/order/",
         produces = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<OrderProcessResponse> getListOrderInQueue(@ApiParam(value = "clientId") @RequestHeader(value = "clientId", required = false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role") @RequestHeader(value = "bearer", required = false) String bearer);
+    ResponseEntity<OrderWaitingResponse> getListOrderInQueue(@ApiParam(value = "clientId") @RequestHeader(value = "clientId", required = false) String clientId, @ApiParam(value = "jwt token contain user infomation and user role") @RequestHeader(value = "bearer", required = false) String bearer);
 
 
     @ApiOperation(value = "Process Order ", nickname = "processOrder", notes = "", response = ResponseStatus.class, authorizations = {

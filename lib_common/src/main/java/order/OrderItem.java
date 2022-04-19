@@ -1,7 +1,5 @@
-package backend.order.dto;
+package order;
 
-import backend.order.entity.OrderEntity;
-import backend.order.entity.OrderItemEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -51,19 +49,5 @@ public class OrderItem {
 
   @JsonProperty("note")
   private String note;
-
-
-  public OrderItemEntity.OrderItemEntityBuilder  toEntity(OrderEntity orderEntity) {
-    OrderItemEntity.OrderItemEntityBuilder builder = OrderItemEntity.builder();
-    builder.orderId(orderEntity);
-    builder.itemId(itemId);
-    builder.quantity(quantity);
-    builder.price(price);
-    builder.originalPrice(originalPrice);
-    builder.discount(discount);
-    builder.discountAmount(discountAmount);
-    builder.note(note);
-    return builder;
-  }
 }
 

@@ -1,9 +1,9 @@
 package backend.order.entity;
 
-import backend.order.dto.OrderItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
+import order.OrderItem;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

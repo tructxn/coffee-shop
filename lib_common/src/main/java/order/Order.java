@@ -1,6 +1,5 @@
-package backend.order.dto;
+package order;
 
-import backend.order.entity.OrderEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -61,18 +60,7 @@ public class Order {
     @JsonProperty("estimateFinishTime")
     private BigDecimal estimateFinishTime;
 
-    public OrderEntity.OrderEntityBuilder toEntity() {
-        OrderEntity.OrderEntityBuilder builder = OrderEntity.builder();
-        builder.orderId(orderId)
-                .userId(userId)
-                .shopId(shopId)
-                .originalPrice(originalPrice)
-                .discount(discount)
-                .queueId(queueId)
-                .discountAmount(discountAmount)
-                .totalPrice(totalPrice)
-                .estimateFinishTime(estimateFinishTime);
-        return builder;
-    }
+    @JsonProperty("queueIndex")
+    private Integer queueIndex;
 }
 

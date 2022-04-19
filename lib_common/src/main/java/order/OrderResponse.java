@@ -1,9 +1,8 @@
-package backend.order.dto;
+package order;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import common.api.ResponseStatus;
 import lombok.Builder;
-import order.Order;
 import org.springframework.validation.annotation.Validated;
 
 /**

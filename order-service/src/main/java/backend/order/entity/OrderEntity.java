@@ -1,10 +1,10 @@
 package backend.order.entity;
 
-import backend.order.dto.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import order.Order;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

@@ -1,14 +1,15 @@
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/OrderLaucher.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/serivce/OrderService.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/entity/OrderItemEntity.java
-/home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/dto/OrderItem.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/serivce/OrderServiceImpl.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/utils/OrderMapperUtils.java
+/home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/repository/OrderRedisRepository.java
+/home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/dto/OrderStatus.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/configuration/HomeController.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/repository/OrderRepository.java
+/home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/repository/OrderRedisRepositoryImpl.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/dto/OrderResponse.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/utils/OrderUtils.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/api/OrderApiController.java
-/home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/dto/Order.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/entity/OrderEntity.java
 /home/tructxn/Dropbox/spring-server/order-service/src/main/java/backend/order/api/OrderApi.java
